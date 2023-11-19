@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Dog's Joy - Refugee</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+    <section class="header">
+        <nav class="navbar" data-bs-theme="light" style="background-color: #0d2d44;">
+            <div class="container-fluid col-6 headerOne">
+                <a class="navbar-brand logo" href="#">
+                    <img src="./img/Mi proyecto.png" alt="Logo" width="125" height="75" class="d-inline-block align-text-top logoImg">
+                    <h1 class="d-inline-block align-text-top headerTitle">A Dog's Joy</h1>
+                    <h2 class="d-inline-block align-text-top headerTitle2">Refugee</h2>
+                  </a>
+            </div>
+            <div class="container-fluid col-6 headerTwo">
+              <button class="btn console" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Console</button>
+
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" aria-controls="offcanvasScrolling" data-bs-backdrop="false">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Admin Console</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body consoleOffcanvas">   
+    <div>
+        <label class="form-label">Here you can enter new information about dogs at the refugee to add them to the public website</label>
+    </div>
+      <form id="console">
+        <label class="form-label">Name</label>
+
+          <input type="text" class="form-control" placeholder="Dog's name" aria-label="name">
+
+        <label class="form-label">Description</label>
+
+          <input type="text" class="form-control" placeholder="Dog's description" aria-label="name">
+
+        <label class="form-label">Image url</label>
+       
+          <input type="text" class="form-control" placeholder="Dog's image" aria-label="name">
+ 
+        <label class="form-label">Breed</label>
+ 
+          <input type="text" class="form-control" placeholder="Dog's breed" aria-label="breed">
+  
+        <label class="form-label">Age</label>
+  
+          <input type="text" class="form-control" placeholder="Dog's age" aria-label="age">
+   
+        <label class="form-label">Color</label>
+ 
+          <input type="text" class="form-control" placeholder="Dog's color" aria-label="color">
+   
+        <label class="form-label">Genre</label>
+     
+          <input type="text" class="form-control" placeholder="Dog's genre" aria-label="genre">
+       
+        <label class="form-label">Size</label>
+       
+          <input type="text" class="form-control" placeholder="Dog's size" aria-label="size">
+       
+        <label class="form-label">Personality traits</label>
+      
+          <input type="text" class="form-control" placeholder="Dog's personality traits" aria-label="personality">
+      
+        <input class="btn submitDog" type="submit" value="Submit"/>
+      </form>
+    
+  </div>
+</div>
+              <form class="d-flex formInput" role="search">
+                <div class="input-group">
+                <input class="form-control userInput" type="search" placeholder="Username" aria-label="Username">
+                <input class="form-control passwordInput" type="search" placeholder="Password" aria-label="Password">
+                <button class="btn btn-outline-success submitUser" type="submit">Log in</button>
+                </div>
+              </form>
+            </div>
+          </nav>
+    </section>
+    </header>
+    <main>
+    <section class="home1">
+        <div class="container-fluid imageHome row">
+            <a href="#refugee" class="container-fluid col-6 leftHome">Hi, my name is Nunu and these are my friends!
+            </a>
+            <div class="container-fluid col-6 rightHome">They are waiting for you to meet them.</div>
+        </div>
+        <div class="container-fluid col-6 searchSection">
+            <div class="d-flex searchEngine" role="search">
+                <form class="input-group" id="searchEngine">
+                <input class="form-control searchInput" type="search" placeholder="Write some trait that caracterize the dog you look for" aria-label="Write some trait that caracterize the dog you look for">
+                <button class="btn btn-outline-success searchSubmit" type="submit"><img src="./img/search.png" alt="search" width="50" height="50" class="d-inline-block align-text-top"></button>
+                </form>
+              </div>
+        </div>
+    </section>
+    <section class="home2 row" id="refugee">
+        <div class="row onlyLine"></div>
+        <div class="nav flex-column col-2 leftMenu">
+        <ul class="stickyMenu">
+            <li class="nav-item">
+                <img src="./img/home.png" alt="icon1" width="50" height="50" class="d-inline-block align-text-top icons">
+              <a class="nav-link" aria-current="page" href="./index.html">Refugee</a>
+            </li>
+            <li class="nav-item">
+                <img src="./img/register.png" alt="icon1" width="50" height="50" class="d-inline-block align-text-top icons">
+              <a class="nav-link " href="./html/register.html">Register</a>
+            </li>
+            <li class="nav-item">
+                <img src="./img/meet.png" alt="icon1" width="50" height="50" class="d-inline-block align-text-top icons">
+              <a class="nav-link " href="./html/meeting.html">Meeting Room</a>
+            </li>
+            <li class="nav-item">
+                <img src="./img/user.png" alt="icon1" width="50" height="50" class="d-inline-block align-text-top icons">
+              <a class="nav-link" href="./html/profile.html">Profile</a>
+            </li>
+          </ul>
+        </div>
+        <section id="refugeeContainer" class="refugee col-10 row">
+            <div class="row lineDogs">
+            <div class="card col-2">
+                <img src="./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png" class="card-img-top" alt="dogsilouette">
+                <div class="card-body">
+                  <h5 class="card-title nameDog">Jay</h5>
+                  <p class="card-text descriptionDog">The dog's description summarized</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item breedDog">Huskysiberiano</li>
+                  <li class="list-group-item colorDog">White</li>
+                  <li class="list-group-item genreDog">Male</li>
+                </ul>
+                <div class="card-body">
+                  <button id="botonA1" class="btn adoptButton" type="button">Adopt</button>
+                  <button id="botonB1" class="btn sponsorButton" type="button">Sponsor</button>
+                </div>
+              </div>
+          <div class="card col-2">
+            <img src="./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png" class="card-img-top" alt="dogsilouette">
+            <div class="card-body">
+              <h5 class="card-title nameDog">Nunu</h5>
+              <p class="card-text descriptionDog">The dog's description summarized</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item breedDog">Goldenretriever</li>
+              <li class="list-group-item colorDog">Beige</li>
+              <li class="list-group-item genreDog">Male</li>
+            </ul>
+            <div class="card-body">
+              <button id="botonA2" class="btn adoptButton" type="button">Adopt</button>
+              <button id="botonB2" class="btn sponsorButton" type="button">Sponsor</button>
+            </div>
+          </div>
+          <div class="card col-2">
+            <img src="./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png" class="card-img-top" alt="dogsilouette">
+            <div class="card-body">
+              <h5 class="card-title nameDog">Ginger</h5>
+              <p class="card-text descriptionDog">The dog's description summarized</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item breedDog">Caniche</li>
+              <li class="list-group-item colorDog">Beige</li>
+              <li class="list-group-item genreDog">Female</li>
+            </ul>
+            <div class="card-body">
+              <button id="botonA3" class="btn adoptButton" type="button">Adopt</button>
+              <button id="botonB3" class="btn sponsorButton" type="button">Sponsor</button>
+            </div>
+          </div>
+          <div class="card col-2">
+            <img src="./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png" class="card-img-top" alt="dogsilouette">
+            <div class="card-body">
+              <h5 class="card-title nameDog">Marley</h5>
+              <p class="card-text descriptionDog">The dog's description summarized</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item breedDog">Germansheperd</li>
+              <li class="list-group-item colorDog">Brown</li>
+              <li class="list-group-item genreDog">Male</li>
+            </ul>
+            <div class="card-body">
+              <button id="botonA4" class="btn adoptButton" type="button">Adopt</button>
+              <button id="botonB4" class="btn sponsorButton" type="button">Sponsor</button>
+            </div>
+          </div>
+        </div>
+        <div class="row lineDogs">
+          <div class="card col-2">
+            <img src="./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png" class="card-img-top" alt="dogsilouette">
+            <div class="card-body">
+              <h5 class="card-title nameDog">Bella</h5>
+              <p class="card-text descriptionDog">The dog's description summarized</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item breedDog">Yorkshireterrier</li>
+              <li class="list-group-item colorDog">White</li>
+              <li class="list-group-item genreDog">Female</li>
+            </ul>
+            <div class="card-body">
+              <button id="botonA5" class="btn adoptButton" type="button">Adopt</button>
+              <button id="botonB5" class="btn sponsorButton" type="button">Sponsor</button>
+            </div>
+          </div>
+          <div class="card col-2">
+            <img src="./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png" class="card-img-top" alt="dogsilouette">
+            <div class="card-body">
+              <h5 class="card-title nameDog">Luna</h5>
+              <p class="card-text descriptionDog">The dog's description summarized</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item breedDog">Dalmatian</li>
+              <li class="list-group-item colorDog">White</li>
+              <li class="list-group-item genreDog">Female</li>
+            </ul>
+            <div class="card-body">
+              <button id="botonA6" class="btn adoptButton" type="button">Adopt</button>
+              <button id="botonB6" class="btn sponsorButton" type="button">Sponsor</button>
+            </div>
+          </div>
+          <div class="card col-2">
+            <img src="./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png" class="card-img-top" alt="dogsilouette">
+            <div class="card-body">
+              <h5 class="card-title nameDog">Charlie</h5>
+              <p class="card-text descriptionDog">The dog's description summarized</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item breedDog">Boxer</li>
+              <li class="list-group-item colorDog">Brown</li>
+              <li class="list-group-item genreDog">Male</li>
+            </ul>
+            <div class="card-body">
+              <button id="botonA7" class="btn adoptButton" type="button">Adopt</button>
+              <button id="botonB7" class="btn sponsorButton" type="button">Sponsor</button>
+            </div>
+          </div>
+      <div class="card col-2">
+        <img src="./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png" class="card-img-top" alt="dogsilouette">
+        <div class="card-body">
+          <h5 class="card-title nameDog">Cooper</h5>
+          <p class="card-text descriptionDog">The dog's description summarized</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item breedDog">Chihuahua</li>
+          <li class="list-group-item colorDog">Black</li>
+          <li class="list-group-item genreDog">Male</li>
+        </ul>
+        <div class="card-body">
+          <button id="botonA8" class="btn adoptButton" type="button">Adopt</button>
+          <button id="botonB8" class="btn sponsorButton" type="button">Sponsor</button>
+        </div>
+      </div>
+        </div>
+        <div class="row lineDogs">
+          <div class="card col-2">
+            <img src="./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png" class="card-img-top" alt="dogsilouette">
+            <div class="card-body">
+              <h5 class="card-title nameDog">Milo</h5>
+              <p class="card-text descriptionDog">The dog's description summarized</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item breedDog">Englishbulldog</li>
+              <li class="list-group-item colorDog">White</li>
+              <li class="list-group-item genreDog">Male</li>
+            </ul>
+            <div class="card-body">
+              <button id="botonA9" class="btn adoptButton" type="button">Adopt</button>
+              <button id="botonB9" class="btn sponsorButton" type="button">Sponsor</button>
+            </div>
+          </div>
+          <div class="card col-2">
+            <img src="./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png" class="card-img-top" alt="dogsilouette">
+            <div class="card-body">
+              <h5 class="card-title nameDog">Max</h5>
+              <p class="card-text descriptionDog">The dog's description summarized</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item breedDog">Beagle</li>
+              <li class="list-group-item colorDog">Brown</li>
+              <li class="list-group-item genreDog">Male</li>
+            </ul>
+            <div class="card-body">
+              <button id="botonA10" class="btn adoptButton" type="button">Adopt</button>
+              <button id="botonB10" class="btn sponsorButton" type="button">Sponsor</button>
+            </div>
+          </div>
+        </div>
+        </section>
+        <div class="alertPlaceholder" id="liveAlertPlaceholder"></div>
+    </section>
+    </main>
+    <footer>
+    <section class="footer">
+        <div class="onlyLine2">We love dogs as much as you do!</div>
+        <div class="footerOne">
+            <div>
+                <h2>
+                    About us
+                </h2>
+                <p>
+                    A Dog´s Joy is an enterprise and a refuge for the beneft of those dogs that need a home, a family, love and atention. We are a group of individuals looking to make the best of a dog´s life together along the community and the world.
+                </p>
+            </div>
+            <div>
+                <h2>
+                    News
+                </h2>
+                <p>
+                    <img class="twitterImg" src="img/twitterIMG.png" alt="twitter">
+                </p>
+            </div>
+            <div>
+                <h2>
+                    Links
+                </h2>
+                <ul class="footerLinks">
+                    <li>
+                        <a href="">Donation</a>
+                        
+                    </li>
+                    <li>
+                        <a href="">Report dog abusement</a>
+                        
+                        
+                    </li>
+                    <li>
+                        <a href="">Rescue your pet</a>
+                        
+                        
+                    </li>
+                    <li>
+                        <a href="">Deliver a dog</a>
+                        
+                        
+                    </li>
+                    <li>
+                        <a href="">Train your dog</a>
+                        
+                        
+                    </li>
+                    <li>
+                        <a href="">Lost dogs</a>
+                        
+                        
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2>
+                    Contact
+                </h2>
+                <ul class="footerContact">
+                    <li>
+                        +584246284938.
+                    </li>
+                    <li>
+                        Business hours: 8:00 a.m to 5:00 p.m.
+                        
+                    </li>
+                    <li>
+                        victordiazpsdm@gmail.com
+                        
+                    </li>
+                    <li>
+                        RIF J-XXXXXXX-X
+                        
+                    </li>
+                    <li>
+                        Urb. Lagomar Beach, 4002.
+                        
+                    </li>
+                    <li>
+                        Zulia, Venezuela.
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerTwo">
+            <p>
+                © 2023 ADJ All rights reserved.
+            </p>
+        </div>
+    </section>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

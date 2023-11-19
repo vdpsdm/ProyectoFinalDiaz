@@ -1,0 +1,156 @@
+.main3{
+    padding-top: 50px;
+    justify-content: space-between;
+    margin: 0px 0px;
+    .alertPlaceholder{
+        display: flex;
+        justify-content: end;
+        position: sticky;
+        bottom: 0px;
+        right: 0px;
+        .alertLayout{
+            background: linear-gradient(to right,$color_2,$color_3);
+            color: black;
+            width: 200px;
+            height: fit-content;
+        }
+    }
+    .onlyLine{
+        margin: 0px 0px;
+        height: 25px;
+        background: linear-gradient(to top, $color_3, white);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        opacity: 75%;
+    }
+    .leftMenu{
+        width: 253px; 
+        margin: 0px 0px;
+        padding-top: 7%;
+        padding-bottom: 7%;
+        font-size: 1.2rem;
+        background: linear-gradient(to bottom,$color_3,white);
+        opacity: 75%;
+        .stickyMenu{
+            position: sticky;
+            top: 0px;
+        }
+        ul{
+            text-align: center;
+        }
+        li{
+            list-style: none;
+            padding-top: 35px;
+            padding-bottom: 35px;
+            transition: all 0.25s ease-in-out;
+            &:hover{
+                transform: scale(1.2,1.2);
+            }
+        }
+        .icons{
+            object-fit: contain;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+            &:active{
+                color: white;
+            }
+            &:link{
+                color: white;
+            }
+        }
+}
+}
+.meetingRoom{
+    min-height: 1000px;
+    object-fit: cover;
+    justify-content: center;
+    padding: 5% 5%;
+    border-left: 1px solid $color_2;
+    .meetingDetails{
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border-radius: 10%;
+        border: 1px solid black;
+        padding-top: 5%;
+        padding-left: 10%;
+        padding-right: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .detailsMeeting{
+            text-align: justify;
+            justify-content: center;
+            background-color: white;
+            .cardContainer{
+            margin: 5px 5px;
+            .card{
+                min-height: 500px;
+                width: 50rem;
+                transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, height 0.5s ease-in-out, width 0.5s ease-in-out;
+                &:hover{
+                    width: 51rem;
+                    background-color: $color_2;
+                    color: whitesmoke;
+                }
+                div{
+                    align-items: center;
+                    text-align: justify;
+                    justify-content: start;
+                }
+                .escButton{
+                    width: 95%;
+                    height: 25px;
+                    font-weight: bold;
+                    font-size: 1.5rem;
+                    text-align: end;
+                    justify-content: end;
+                    align-items: end;
+                    button{
+                        border: 1px solid 
+                        black;
+                        padding: 1px 5px;
+                        transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+                        &:hover{
+                            border: none;
+                            background-color: red;
+                        }
+                        &:active{
+                            color: whitesmoke;
+                        }
+                    }
+                }
+                }
+            }   
+        }
+        .meetingTitle{
+            font-weight: lighter;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        .meetingButton{
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-align: end;
+            justify-content: end;
+            margin-top: 25px;
+            margin-bottom: 50px;
+            button{
+                border: 1px solid 
+                $color_3;
+                padding: 25px 25px;
+                transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+                &:hover{
+                    border: none;
+                    background-color: $color_2;
+                }
+                &:active{
+                    color: whitesmoke;
+                }
+            }
+        }
+    }
+
+}

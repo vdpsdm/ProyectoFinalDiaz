@@ -1,0 +1,44 @@
+.register{
+    min-height: 1000px;
+    background-image: url(../img/dogregister.jpg);
+    background-size: 100% 100%;
+    object-fit: cover;
+    filter: sepia(100%) hue-rotate(230deg) saturate(20%);
+    justify-content: center;
+    padding: 20% 30%;
+    .registerForm{
+        width: 100%;
+        height: 400px;
+        background-color: whitesmoke;
+        border-radius: 25%;
+        border: 1px solid rgb(208, 208, 208);
+        text-align: center;
+        justify-content: center;
+        padding-top: 10%;
+        padding-left: 15%;
+        padding-right: 15%;
+        .emailRegister{
+            border: 1px solid rgb(208, 208, 208);
+            background-color: rgb(28, 28, 28);
+            color: white;
+        }
+        .passwordRegister{
+            border: 1px solid rgb(208, 208, 208);
+            background-color: rgb(28, 28, 28);
+            color: white;
+        }
+        .buttonRegister{
+            transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+            border-radius: 50%;
+            padding: 10px 10px;
+            border: 1px solid black;
+            &:hover{
+                background-color: $color_2;
+            }
+            &:active{
+                color: whitesmoke;
+            }
+        }
+
+    }
+}

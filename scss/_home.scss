@@ -1,0 +1,159 @@
+.home1{
+    background-image: url("../img/perrosalchicha.png");
+    background-repeat: no-repeat;
+    background-size: 100% 660px;
+    object-fit: cover;
+    min-height: 500px;
+    .imageHome{
+        min-height: 500px;
+    .leftHome{
+        text-align: center;
+        margin-top: 10%;
+        margin-bottom: 20%;
+        margin-left: 5%;
+        padding-top: 4%;
+        font-size: 1rem;
+        font-style: oblique;
+        width: 300px;
+        color: black;
+        border-radius: 50%;
+        border: 1px solid black;
+        transition:color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+        &:hover{
+            background-color: $color_2;
+            color: whitesmoke;
+        }
+    }
+    .rightHome{
+        text-align: end;
+        padding-top: 30%;
+        padding-bottom: 10%;
+        font-style: italic;
+        animation-name: text;
+        animation-iteration-count: 1;
+        animation-duration: 3s;
+        animation-delay: 0s;
+        animation-timing-function: ease-in;
+    }
+    }
+    .searchEngine{
+        .searchInput{
+            box-shadow: none;
+            &:focus{
+                border: 1px solid rgb(223, 223, 223);
+            }
+        }
+        .searchSubmit{
+            border: 1px solid rgb(214, 214, 214);
+            transition: color .25s ease-in-out,background-color .25s ease-in-out;
+            &:hover{
+                background-color: $color_2;
+            }
+        }
+}
+}
+.home2{
+    padding-top: 50px;
+    margin: 0px 0px;
+    text-align: end;
+    .alertPlaceholder{
+        display: flex;
+        justify-content: end;
+        position: sticky;
+        bottom: 0px;
+        right: 0px;
+        .alertLayout{
+            background: linear-gradient(to right,$color_2,$color_3);
+            color: black;
+        }
+    }
+    .onlyLine{
+        margin: 0px 0px;
+        height: 25px;
+        background: linear-gradient(to top, $color_3, white);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        opacity: 75%;
+    }
+    .leftMenu{
+        width: 253px; 
+        margin: 0px 0px;
+        padding-top: 7%;
+        padding-bottom: 7%;
+        font-size: 1.2rem;
+        background: linear-gradient(to bottom,$color_3,white);
+        opacity: 75%;
+        .stickyMenu{
+            position: sticky;
+            top: 0px;
+        }
+        ul{
+            text-align: center;
+        }
+        li{
+            list-style: none;
+            padding-top: 35px;
+            padding-bottom: 35px;
+            transition: all 0.25s ease-in-out;
+            &:hover{
+                transform: scale(1.2,1.2);
+            }
+        }
+        .icons{
+            object-fit: contain;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+            &:active{
+                color: white;
+            }
+            &:link{
+                color: black;
+            }
+        }
+    }
+    .refugee{
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-top: 50px;
+        object-fit: contain;
+        padding-bottom: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .lineDogs{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        .card{
+            width: 14rem;
+            margin: 5px 5px;
+            transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, height 0.5s ease-in-out, width 0.5s ease-in-out;
+            &:hover{
+                width: 20rem;
+                background-color: $color_2;
+                color: whitesmoke;
+            }
+            }
+    }
+    .adoptButton{
+        border: 1px solid black;
+        border-radius: 15%;
+        transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+        &:hover{
+            background-color: $color_2;
+            color: whitesmoke;
+        }
+    }
+    .sponsorButton{
+        border: 1px solid black;
+        border-radius: 15%;
+        transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+        &:hover{
+            background-color: $color_2;
+            color: whitesmoke;
+        }
+    }
+}

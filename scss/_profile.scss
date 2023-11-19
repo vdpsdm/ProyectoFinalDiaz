@@ -1,0 +1,121 @@
+.welcome{
+        margin-right: 20px;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        border-radius: 0.375rem;
+        transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+        font-style: italic;
+        font-weight: lighter;
+        &:hover{
+            background-color: $color_2;
+        }
+        &:active{
+            color: whitesmoke;
+        }
+}
+.main2{
+    padding-top: 50px;
+    justify-content: space-between;
+    margin: 0px 0px;
+    .onlyLine{
+        margin: 0px 0px;
+        height: 25px;
+        background: linear-gradient(to top, $color_3, white);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        opacity: 75%;
+    }
+    .leftMenu{
+        width: 253px; 
+        margin: 0px 0px;
+        padding-top: 7%;
+        padding-bottom: 7%;
+        font-size: 1.2rem;
+        background: linear-gradient(to bottom,$color_3,white);
+        opacity: 75%;
+        .stickyMenu{
+            position: sticky;
+            top: 0px;
+        }
+        ul{
+            text-align: center;
+        }
+        li{
+            list-style: none;
+            padding-top: 35px;
+            padding-bottom: 35px;
+            transition: all 0.25s ease-in-out;
+            &:hover{
+                transform: scale(1.2,1.2);
+            }
+        }
+        .icons{
+            object-fit: contain;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+            &:active{
+                color: white;
+            }
+            &:link{
+                color: white;
+            }
+        }
+}
+}
+
+.profile{
+    min-height: 1000px;
+    background-image: url(../img/green-grass.jpg);
+    background-size: 100% 100%;
+    background-size: cover;
+    filter: sepia(100%) hue-rotate(230deg) saturate(20%);
+    object-fit: cover;
+    justify-content: center;
+    padding: 5% 5%;
+    border-left: 1px solid $color_2;
+    .profileDetails{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(215, 215, 215);
+        border-radius: 25%;
+        border: 1px solid black;
+        padding-top: 10%;
+        padding-left: 15%;
+        padding-right: 15%;
+        ul{
+            text-align: left;
+            justify-content: left;
+            .detailsProfile{
+                font-weight: bold;
+                color: black;
+            }
+        }
+        .profileTitle{
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        .profileButton{
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-align: center;
+            justify-content: center;
+            button{
+                border-radius: 25%;
+                padding: 25px 25px;
+                transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+                &:hover{
+                    background-color: $color_2;
+                }
+                &:active{
+                    color: whitesmoke;
+                }
+            }
+        }
+    }
+
+}
