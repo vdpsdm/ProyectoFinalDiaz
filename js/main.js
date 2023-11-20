@@ -102,18 +102,11 @@ const renderizado = (dogListX) => {
 adminConsole.addEventListener("submit", (e) => {
   e.preventDefault();
   let inputs = e.target.children;
-  let adminInputs=[];
-  let adminNoInputs=[];
-  let itemCont=1;
-  for(item in Object.keys(inputs).value){
-    itemCont % 2 != 0 ? adminInputs.push(item):adminNoInputs.push(item);
-    itemCont+=itemCont;
-  }
   let dogList3=[];
   dogList3=localstorageGet("dogList");
   let longitud=dogList3.length + 1;
   longitud=longitud.toString();
-    dogList3.push({id: longitud, name: adminInputs[0], image: adminInputs[2], description: adminInputs[1], breed: adminInputs[3], age: adminInputs[4], color: adminInputs[5], size: adminInputs[7], gender: adminInputs[6], personality: adminInputs[8] });
+    dogList3.push({id: longitud, name: inputs[1].value, image: inputs[5].value, description: inputs[3].value, breed: inputs[7].value, age: inputs[9].value, color: inputs[11].value, size: inputs[15].value, gender: inputs[13].value, personality: inputs[13].value });
     localstorageSet(dogList3,"dogList");
     renderizado(dogList3);
 });
