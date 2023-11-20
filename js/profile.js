@@ -29,11 +29,7 @@ function profileModify(profileDetails){
     let lName = document.getElementById("lName");
     lName.value=`${inputsList.lName}`;
     let genre = document.getElementById("genre");
-    if(inputsList.genre=="Male"){
-            genreIndex=1;
-    }else if(inputsList.genre=="Female"){
-            genreIndex=2;
-    }else{genreIndex=3;}
+    inputsList.genre=="Male"? genreIndex=1: inputsList.genre=="Female"? genreIndex=2 : genreIndex=3;
     genre.selectedIndex=`${genreIndex}`;
     let sStatus = document.getElementById("sStatus");
     sStatus.value=`${inputsList.sStatus}`;
@@ -136,10 +132,10 @@ function loginSequence(Database,userDiv){
     }
   });
 if(adminOn!=null && adminOn==1){
-  userLogin.innerHTML=`<div><p class= "welcomeBack">Welcome back Admin</p></div><button type="button" class="btn submitUser" id="logOff">Log off</button>`;
-  let logOff=document.getElementById("logOff");
+  userLogin.innerHTML=`<div><p class= "welcomeBack">Welcome back Admin</p></div><button type="button" class="btn submitUser" id="logOffA">Log off</button>`;
+  let logOff=document.getElementById("logOffA");
   logOff.addEventListener("click", ()=>{
-      sessionStorage.removeItem("userOn");
+      sessionStorage.removeItem("adminOn");
       location.reload();
   })
 }

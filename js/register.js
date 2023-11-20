@@ -56,11 +56,7 @@
                  let lName = document.getElementById("lName");
                  lName.value=`${inputsList.lName}`;
                  let genre = document.getElementById("genre");
-                 if(inputsList.genre=="Male"){
-                    genreIndex=1;
-                 }else if(inputsList.genre=="Female"){
-                    genreIndex=2;
-                 }else{genreIndex=3;}
+                 inputsList.genre=="Male"? genreIndex=1: inputsList.genre=="Female"? genreIndex=2 : genreIndex=3;
                  genre.selectedIndex=`${genreIndex}`;
                  let sStatus = document.getElementById("sStatus");
                  sStatus.value=`${inputsList.sStatus}`;
