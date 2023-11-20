@@ -1,4 +1,3 @@
-//Constructor de la lista de perros.
 class doglistBuilder {
     constructor(id,name,image,description,breed,age,color,size,gender,personality){
         this.id=id;
@@ -13,7 +12,6 @@ class doglistBuilder {
         this.personality=personality;
     }
 };
-//Declaracion lista de perros
 const dogList=[];
 dogList.push(new doglistBuilder("1","Jay","./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","Description of the dog","Huskysiberiano","2","White","Big","Male","Sociable"));
 dogList.push(new doglistBuilder("2","Nunu","./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","Description of the dog","Goldenretriever","1","Beige","Male","Medium","Sociable"));
@@ -25,18 +23,41 @@ dogList.push(new doglistBuilder("7","Charlie","./img/Sitting-Dog-Silhouette-Shep
 dogList.push(new doglistBuilder("8","Cooper","./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","Description of the dog","Chihuahua","1","Black","Small","Male","Fearless"));
 dogList.push(new doglistBuilder("9","Milo","./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","Description of the dog","EnglishBulldog","1","White","Medium","Male","Timid"));
 dogList.push(new doglistBuilder("10","Max","./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","Description of the dog","Beagle","0","Brown","Small","Male","Curious"));
-let checkStorageList=localStorage.getItem("dogList");
+fetch("./json/data.json")
+  .then((response) => response.json())
+  .then((data) => {
+    data.forEach((item) => {
+      dogList.push(item);
+    });
+    localstorageSet(dogList,"dogList");
+  });
+function localstorageGet(item){
+  gotItem=localStorage.getItem(item);
+  gotItem=JSON.parse(gotItem);
+  return gotItem;
+}
+function localstorageSet(item,name){
+  item=JSON.stringify(item);
+  localStorage.setItem(name,item);
+}
+function sessionstorageGet(item){
+  gotItem=sessionStorage.getItem(item);
+  gotItem=JSON.parse(gotItem);
+  return gotItem;
+}
+function sessionstorageSet(item,name){
+  item=JSON.stringify(item);
+  sessionStorage.setItem(name,item);
+}
 function filtering(filter){
     let found=null;
     let dogListFiltered=[];
-    let dogListK=[];
-    dogListK=localStorage.getItem("dogList");
-    dogList2=JSON.parse(dogListK);
+    let dogList2=[];
+    dogList2=localstorageGet("dogList");
     dogList2.forEach(item=>{
         for(let i=0;i<Object.keys(item).length;i++){
             if(Object.values(item)[i].toLowerCase()===filter){
                     found=i;
-
             }
         }
     })
@@ -81,22 +102,19 @@ const renderizado = (dogListX) => {
 adminConsole.addEventListener("submit", (e) => {
   e.preventDefault();
   let inputs = e.target.children;
-  let name= inputs[1].value;
-  let image= inputs[5].value;
-  let description= inputs[3].value;
-  let breed= inputs[7].value;
-  let age= inputs[9].value;
-  let color= inputs[11].value;
-  let size= inputs[15].value;
-  let gender= inputs[13].value;
-  let personality= inputs[17].value;
-  let dogListY=[];
-  dogListY=localStorage.getItem("dogList");
-  dogList3=JSON.parse(dogListY);
+  let adminInputs=[];
+  let adminNoInputs=[];
+  let itemCont=1;
+  for(item in Object.keys(inputs).value){
+    itemCont % 2 != 0 ? adminInputs.push(item):adminNoInputs.push(item);
+    itemCont+=itemCont;
+  }
+  let dogList3=[];
+  dogList3=localstorageGet("dogList");
   let longitud=dogList3.length + 1;
   longitud=longitud.toString();
-    dogList3.push({id: longitud, name, image, description, breed, age, color, size, gender, personality });
-    localStorage.setItem("dogList",JSON.stringify(dogList3));
+    dogList3.push({id: longitud, name: adminInputs[0], image: adminInputs[2], description: adminInputs[1], breed: adminInputs[3], age: adminInputs[4], color: adminInputs[5], size: adminInputs[7], gender: adminInputs[6], personality: adminInputs[8] });
+    localstorageSet(dogList3,"dogList");
     renderizado(dogList3);
 });
 filterSearch.addEventListener("submit", (e) => {
@@ -109,28 +127,26 @@ filterSearch.addEventListener("submit", (e) => {
         dogListFiltered= filtering(userSearch);
         renderizado(dogListFiltered);
     }else if(userSearch==""){
-        let dogListU=localStorage.getItem("dogList");
-        let dogListB=JSON.parse(dogListU);
+        let dogListB=[];
+        dogListB=localstorageGet("dogList");
         renderizado(dogListB);
         }
 });
 function mettingAdopt(ID){
-    let dogListF=[];
-    dogListF=localStorage.getItem("dogList");
-    let dogListV=JSON.parse(dogListF);
+    let dogListV=[];
+    dogListV=localstorageGet("dogList");
     let reason="Adopt";
     let dogListMeeting=dogListV.filter((item) => item.id === ID.toString());
-    localStorage.setItem(`dogListMeeting${ID}`,JSON.stringify(dogListMeeting));
-    localStorage.setItem(`reason${ID}`,JSON.stringify(reason));
+    localstorageSet(dogListMeeting,`dogListMeeting${ID}`);
+    localstorageSet(reason,`reason${ID}`);
 }
 function mettingSponsor(ID){
-    let dogListF=[];
-    dogListF=localStorage.getItem("dogList");
-    let dogListV=JSON.parse(dogListF);
+    let dogListV=[];
+    dogListV=localstorageGet("dogList");
     let reason="Sponsor";
     let dogListMeeting=dogListV.filter((item) => item.id === ID.toString());
-    localStorage.setItem(`dogListMeeting${ID}`,JSON.stringify(dogListMeeting));
-    localStorage.setItem(`reason${ID}`,JSON.stringify(reason));
+    localstorageSet(dogListMeeting,`dogListMeeting${ID}`);
+    localstorageSet(reason,`reason${ID}`);
 }   
 const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
 const appendAlert = (message, type) => {
@@ -141,14 +157,17 @@ const appendAlert = (message, type) => {
     '</div>'
   ].join('')
 }
-    let dogListJSON= JSON.parse(checkStorageList);
-    if (dogListJSON===null){
-        localStorage.setItem("dogList",JSON.stringify(dogList));
-        let dogListJSON= dogList;
-        renderizado(dogListJSON); 
-      }else {
-        renderizado(dogListJSON);
-      }
+    setTimeout(()=>{
+      let checkStorageList=localstorageGet("dogList");
+      if (checkStorageList==null){
+        localstorageSet(dogList,"dogList");
+          let dogListJSON= dogList;
+          renderizado(dogListJSON); 
+        }else {
+          let dogListJSON= dogList;
+          renderizado(dogListJSON);
+        }
+    },300);
       function refreshButtons(dogListJSON){
         let adoptButtonJs= [];
         let sponsorButtonJs= [];
@@ -169,4 +188,51 @@ const appendAlert = (message, type) => {
           }
       })
       }
-
+      function loginSequence(Database,userDiv){
+        userDiv.innerHTML=`<div><p class= "welcomeBack">Welcome back ${Database.name}</p></div><button type="button" class="btn submitUser" id="logOff">Log off</button>`;
+        let logOff=document.getElementById("logOff");
+        logOff.addEventListener("click", ()=>{
+            sessionStorage.removeItem("userOn");
+            location.reload();
+        })
+      }
+      let userLogin=document.getElementById("loginForm");
+      userLogin.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let inputs = e.target.children;
+        inputs=inputs.item(0).children;
+        let username=inputs[0].value;
+        let password=inputs[1].value;
+        let Database=localstorageGet("registerData");
+        if(Database!=null){
+          userDatabase=Database.email;
+          passwordDatabase=Database.password;
+          if(username==userDatabase && password==passwordDatabase){
+            let userOn=1;
+            sessionstorageSet(userOn,"userOn");
+            sessionstorageSet(Database,"Database");
+            location. reload()
+          }else if(username=="admin" && password=="admin"){
+            let adminOn=1;
+            sessionstorageSet(adminOn,"adminOn");
+            location. reload()
+          }else{
+            Swal.fire({
+              icon: "error",
+              title: "User not registered",
+              text: "Something went wrong!"
+            });
+          }
+        }
+      });
+      let adminOn = sessionstorageGet("adminOn");
+      let userOn = sessionstorageGet("userOn");
+      let Database = sessionstorageGet("Database");
+      if(adminOn!=null && adminOn==1){
+        let visible=document.getElementById("invisibleConsole");
+        visible.className="btn console";
+        userLogin.innerHTML=`<div><p class= "welcomeBack">Welcome back Admin</p></div>`;
+      }
+      if(userOn!=null && userOn==1){
+        loginSequence(Database,userLogin);
+      }

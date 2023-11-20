@@ -20,7 +20,13 @@
                       </a>
                 </div>
                 <div class="container-fluid col-6 headerTwo">
-                    <a class="navbar-brand welcome" href="#">Welcome visitor</a>
+                    <form class="d-flex formInput" role="search" id="loginForm">
+                        <div class="input-group">
+                        <input class="form-control userInput" type="search" placeholder="Username" aria-label="Username">
+                        <input class="form-control passwordInput" type="search" placeholder="Password" aria-label="Password">
+                        <button class="btn btn-outline-success submitUser" type="submit">Log in</button>
+                        </div>
+                      </form>
                 </div>
               </nav>
         </section>
@@ -56,25 +62,8 @@
               </ul>
             </div>
             <section class="profile col-10">
-                <div class="profileDetails">
-                    <div class="profileTitle"><p> Detalles del perfil</p></div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item list-group-item-dark detailsProfile">Name:</li>
-                        <li class="list-group-item list-group-item-dark">Elias</li>
-                        <li class="list-group-item list-group-item-dark detailsProfile">Last name:</li>
-                        <li class="list-group-item list-group-item-dark">Haggard</li>
-                        <li class="list-group-item list-group-item-dark detailsProfile">Genre:</li>
-                        <li class="list-group-item list-group-item-dark">Male</li>
-                        <li class="list-group-item list-group-item-dark detailsProfile">Social Status:</li>
-                        <li class="list-group-item list-group-item-dark">Married</li>
-                        <li class="list-group-item list-group-item-dark detailsProfile">Telephone number:</li>
-                        <li class="list-group-item list-group-item-dark">+53284109234</li>
-                        <li class="list-group-item list-group-item-dark detailsProfile">Address:</li>
-                        <li class="list-group-item list-group-item-dark">Av.8 7th street of Casablanca</li>
-                        <li class="list-group-item list-group-item-dark detailsProfile">How many animals do you have in your house?:</li>
-                        <li class="list-group-item list-group-item-dark">1</li>
-                      </ul>
-                      <div class="profileButton"><button class="btn" type="button"> Press to change your profile details</button></div>
+                <div class="profileDetails" id="profileDetails">
+                    <div class="profileTitle"><p>Profile information is not available as you are not logged in</p></div>
                 </div>
             </section>
         </section>
@@ -174,6 +163,7 @@
     </section>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <!-- <script src="../js/main.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/profile.js"></script>
 </body>
 </html>

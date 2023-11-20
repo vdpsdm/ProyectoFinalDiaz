@@ -21,7 +21,7 @@
                   </a>
             </div>
             <div class="container-fluid col-6 headerTwo">
-              <button class="btn console" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Console</button>
+              <button class="btn console invisible" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" id="invisibleConsole">Console</button>
 
 <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" aria-controls="offcanvasScrolling" data-bs-backdrop="false">
   <div class="offcanvas-header">
@@ -74,7 +74,7 @@
     
   </div>
 </div>
-              <form class="d-flex formInput" role="search">
+              <form class="d-flex formInput" role="search" id="loginForm">
                 <div class="input-group">
                 <input class="form-control userInput" type="search" placeholder="Username" aria-label="Username">
                 <input class="form-control passwordInput" type="search" placeholder="Password" aria-label="Password">
