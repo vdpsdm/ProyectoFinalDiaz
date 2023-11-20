@@ -136,7 +136,12 @@ function loginSequence(Database,userDiv){
     }
   });
 if(adminOn!=null && adminOn==1){
-  userLogin.innerHTML=`<div><p class= "welcomeBack">Welcome back Admin</p></div>`;
+  userLogin.innerHTML=`<div><p class= "welcomeBack">Welcome back Admin</p></div><button type="button" class="btn submitUser" id="logOff">Log off</button>`;
+  let logOff=document.getElementById("logOff");
+  logOff.addEventListener("click", ()=>{
+      sessionStorage.removeItem("userOn");
+      location.reload();
+  })
 }
 if(userOn!=null && userOn==1){
   loginSequence(Database,userLogin);

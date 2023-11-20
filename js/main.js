@@ -12,7 +12,7 @@ class doglistBuilder {
         this.personality=personality;
     }
 };
-const dogList=[];
+let dogList=[];
 dogList.push(new doglistBuilder("1","Jay","./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","Description of the dog","Huskysiberiano","2","White","Big","Male","Sociable"));
 dogList.push(new doglistBuilder("2","Nunu","./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","Description of the dog","Goldenretriever","1","Beige","Male","Medium","Sociable"));
 dogList.push(new doglistBuilder("3","Ginger","./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","Description of the dog","Caniche","0","Beige","Small","Female","Playful"));
@@ -23,6 +23,8 @@ dogList.push(new doglistBuilder("7","Charlie","./img/Sitting-Dog-Silhouette-Shep
 dogList.push(new doglistBuilder("8","Cooper","./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","Description of the dog","Chihuahua","1","Black","Small","Male","Fearless"));
 dogList.push(new doglistBuilder("9","Milo","./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","Description of the dog","EnglishBulldog","1","White","Medium","Male","Timid"));
 dogList.push(new doglistBuilder("10","Max","./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","Description of the dog","Beagle","0","Brown","Small","Male","Curious"));
+let dogListFetch = localstorageGet("dogList");
+if (dogListFetch==null){
 fetch("./json/data.json")
   .then((response) => response.json())
   .then((data) => {
@@ -31,6 +33,7 @@ fetch("./json/data.json")
     });
     localstorageSet(dogList,"dogList");
   });
+}
 function localstorageGet(item){
   gotItem=localStorage.getItem(item);
   gotItem=JSON.parse(gotItem);
@@ -224,7 +227,12 @@ const appendAlert = (message, type) => {
       if(adminOn!=null && adminOn==1){
         let visible=document.getElementById("invisibleConsole");
         visible.className="btn console";
-        userLogin.innerHTML=`<div><p class= "welcomeBack">Welcome back Admin</p></div>`;
+        userLogin.innerHTML=`<div><p class= "welcomeBack">Welcome back Admin</p></div><button type="button" class="btn submitUser" id="logOffA">Log off</button>`;
+        let logOff=document.getElementById("logOffA");
+        logOff.addEventListener("click", ()=>{
+            sessionStorage.removeItem("adminOn");
+            location.reload();
+        })
       }
       if(userOn!=null && userOn==1){
         loginSequence(Database,userLogin);
