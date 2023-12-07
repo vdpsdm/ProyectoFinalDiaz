@@ -23,8 +23,6 @@ dogList.push(new doglistBuilder("7","Charlie","./img/Sitting-Dog-Silhouette-Shep
 dogList.push(new doglistBuilder("8","Cooper","./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","Description of the dog","Chihuahua","1","Black","Small","Male","Fearless"));
 dogList.push(new doglistBuilder("9","Milo","./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","Description of the dog","EnglishBulldog","1","White","Medium","Male","Timid"));
 dogList.push(new doglistBuilder("10","Max","./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","Description of the dog","Beagle","0","Brown","Small","Male","Curious"));
-let dogListFetch = localstorageGet("dogList");
-if (dogListFetch==null){
 fetch("./json/data.json")
   .then((response) => response.json())
   .then((data) => {
@@ -33,7 +31,6 @@ fetch("./json/data.json")
     });
     localstorageSet(dogList,"dogList");
   });
-}
 function localstorageGet(item){
   gotItem=localStorage.getItem(item);
   gotItem=JSON.parse(gotItem);
@@ -163,7 +160,7 @@ const appendAlert = (message, type) => {
           let dogListJSON= dogList;
           renderizado(dogListJSON);
         }
-    },300);
+    },1000);
       function refreshButtons(dogListJSON){
         let adoptButtonJs= [];
         let sponsorButtonJs= [];
