@@ -1,5 +1,5 @@
 [
     {"id":"997","name":"Hoffy1","image":"./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","description":"Description of the dog","breed":"Chihuahua","age":"4","color":"White","size":"Small","gender":"Male","personality":"Playful"},
-    {"id":"998","name":"Tupin4","image":"./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","description":"Description of the dog","breed":"GoldenRetriever","age":"1","color":"Beige","size":"Small","gender":"Female","personality":"Timid"},
-    {"id":"999","name":"Cheli1","image":"./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","description":"Description of the dog","breed":"Poodle","age":"2","color":"White","size":"Medium","gender":"Female","personality":"Fearless"}
+    {"id":"998","name":"Tupin2","image":"./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","description":"Description of the dog","breed":"GoldenRetriever","age":"1","color":"Beige","size":"Small","gender":"Female","personality":"Timid"},
+    {"id":"999","name":"Cheli3","image":"./img/Sitting-Dog-Silhouette-Shepherd-Dog-Graphics-35367704-1.png","description":"Description of the dog","breed":"Poodle","age":"2","color":"White","size":"Medium","gender":"Female","personality":"Fearless"}
 ]

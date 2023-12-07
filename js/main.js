@@ -29,8 +29,18 @@ fetch("./json/data.json")
     data.forEach((item) => {
       dogList.push(item);
     });
-    localstorageSet(dogList,"dogList");
   });
+  setTimeout(()=>{
+    let checkStorageList=localstorageGet("dogList");
+    if (checkStorageList==null){
+      localstorageSet(dogList,"dogList");
+        let dogListJSON= dogList;
+        renderizado(dogListJSON); 
+      }else {
+        let dogListJSON= checkStorageList;
+        renderizado(dogListJSON);
+      }
+  },1000);
 function localstorageGet(item){
   gotItem=localStorage.getItem(item);
   gotItem=JSON.parse(gotItem);
@@ -150,17 +160,6 @@ const appendAlert = (message, type) => {
     '</div>'
   ].join('')
 }
-    setTimeout(()=>{
-      let checkStorageList=localstorageGet("dogList");
-      if (checkStorageList==null){
-        localstorageSet(dogList,"dogList");
-          let dogListJSON= dogList;
-          renderizado(dogListJSON); 
-        }else {
-          let dogListJSON= dogList;
-          renderizado(dogListJSON);
-        }
-    },1000);
       function refreshButtons(dogListJSON){
         let adoptButtonJs= [];
         let sponsorButtonJs= [];
